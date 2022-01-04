@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+<main class="bg-light" >
+ <div class=" container shadow-2 d-grid  gap-2 mt-3">
+    <button class="btn btn-primary bt-sm" type="button"> <small>List your products</small> </button> 
+  
+<div class="row">
+  <div class="col-md-3 mt-5">
+      Side Nav
+  </div>
+  <div class="col-md-9 shadow-1">
+
+  <section id="formsubmit" class=" bg-light mt-5 ">
+    <form method="POST" action="" id="loaddataform" enctype="multipart/form-data" data-subcategory-url="{% url 'ajax_load_subcategory' %}" class="row g-3" >
+         {% csrf_token %}  
+           <div class="row  justify-content-center">
+                  <div class="row my-2">
+                    <div class="col-md">
+                      <div class="">
+                        <label class="form-label my-0 labelselect fw-bold " for="">select category</label>
+                      {% render_field form.category class="form-select form-select-sm" %}
+                      </div>
+                    </div> 
+                    <div class="col-md ">
+                    <div class="">
+                      <label class="form-label my-0 labelselect fw-bold " for="">select subcategory</label>
+                      {% render_field form.subcategory class="form-select form-select-sm" %}
+                    </div>
+                    </div>
+                    <div class="col-md "
+                    <div class="">
+                    <label class="form-label my-0 labelselect fw-bold " for="">conditions</label>
+                    {% render_field form.conditions class="form-select form-select-sm" %}
+                    </div>
+                  </div>
+                  <div class="row my-2">
+                  
+                    <div class="col-md my-2">
+                    <div class="form-outline">
+                    {% render_field form.title class="form-control form-control-sm" %}
+                    <label for="validationDefault01" class="form-label fw-bold ">Short title for listing</label> 
+                    </div>
+                    </div>
+                    <div class="col-md my-2">
+                    <div class="input-group input-group-sm form-outline ">
+                      <span class="input-group-text fw-bold">Rs.(Price)</span>
+                      {% render_field form.price class="form-control form-control-sm" aria-label="Amount (to the nearest dollar)"%}
+                      <span class="input-group-text fw-bold">.00</span>
+                    </div>
+                    </div>     
+                  </div>
+                  <div class="row my-2"> 
+                    <div class="col-md ">
+                      <div class="">
+                        <label class="form-label my-0 labelselect fw-bold " for="">is negotiable</label>
+                        {% render_field form.isnegotiate class="form-select form-select-sm" %}
+                      </div>
+                    </div>
+                    <div class="col-md ">
+                      <div class="">
+                        <label class="form-label my-0 labelselect fw-bold " for="">ads to be expired</label>
+                        {% render_field form.adsexpiry class="form-select form-select-sm"%}
+                      </div>
+                    </div>
+                    <div class="col-md">
+                      <!-- Email input -->
+                      <div class="">
+                        <label class="form-label my-0 labelselect fw-bold " for="">will be deliverd</label>
+                        {% render_field form.isdeliver class="form-select form-select-sm"%}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row my-2"> 
+                    <div class="col-md">
+                      <!-- Email input -->
+                      <div class="">
+                        <label class="form-label my-0 labelselect fw-bold " for="">delivery area</label>
+                        {% render_field form.deliveryarea class="form-select form-select-sm"%}
+                      </div>
+                    </div>
+                 
+                    <div class="col-md mt-4">
+                      <div class="form-outline">
+                        {% render_field form.deliverycharges class="form-control form-control-sm" %}
+                        <label for="validationDefault01" class="form-label fw-bold ">delivery charge</label> 
+                        </div>
+                    </div>
+                  </div>
+
+                <div class="row my-2">
+                  <div class="col">
+                  <div class="form-outline">
+                    <label for="formFileMultiple" class="form-label labelselect mb-1">upload listing images</label>
+                    <input class="form-control orm-control-sm" name="listingimg" type="file" id="formFileMultiple" multiple />
+                  </div>
+                  </div>
+                </div>
+                <div class="row my-2">
+                  <div class="col">
+                    <div class="form-outline">
+                      {% render_field form.descriptions class="form-control form-control-sm" rows="4"%}
+                      <label class="form-label fw-bold " for="form4Example3">Details about products...</label>
+                    </div>
+                  </div>
+                </div>           
+           </div>
+           <div class="col-12 text-center m-4">
+            <button name="productlist" class="btn btn-primary" type="submit">Submit form</button>
+          </div>
+    </form>
+  </section>
+
+  </div>
+</div>
+
+
+</div>
+</main>
+{% endblock content %}

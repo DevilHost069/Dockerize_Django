@@ -1,0 +1,136 @@
+{% load myfilters %}
+ <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light  bg-light">
+        <!-- Container wrapper -->
+        <div class="container">
+          <!-- Navbar brand -->
+          <a class="navbar-brand me-2" href="{% url 'mainpage' %}">
+            <img
+              src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png"
+              height="16"
+              alt=""
+              loading="lazy"
+              style="margin-top: -1px"
+            />
+          </a>
+  
+          <!-- Toggle button -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarButtonsExample"
+            aria-controls="navbarButtonsExample"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+  
+          <!-- Collapsible wrapper -->
+          <div class="collapse navbar-collapse" id="navbarButtonsExample">
+            <!-- Left links -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Dashboard</a>
+              </li>
+            </ul>
+            <!-- Left links -->
+  
+            <div class="d-flex align-items-center">
+              <a href="{% url 'publishproducts' %}"><button type="button" class="btn btn-primary me-3">
+                Publish products
+              </button></a>
+      
+      {% if request.user.is_authenticated %}
+      <!--Messages-->
+      <div class="dropdown">
+        <a
+          class="text-reset me-3 dropdown-toggle hidden-arrow"
+          href="#"
+          role="button"
+          id="dropdownMenuLinktest"
+          data-mdb-toggle="dropdown"
+          aria-expanded="false"
+        >
+        <i class="fab fa-facebook-messenger"></i>
+        <span class="badge rounded-pill badge-notification bg-danger">1</span>
+        </a>
+       
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLinktest">
+          <li><a class="dropdown-item py-1" href="#">Action</a></li>
+          <li><hr class="dropdown-divider" /></li>
+          <li><a class="dropdown-item py-1" href="#">Another action</a></li>
+          <li><hr class="dropdown-divider" /></li>
+          <li><a class="dropdown-item py-1" href="#">Something else here</a></li>
+        </ul>
+      </div>
+       <!--End Messages-->
+        <!--Notifications-->
+        <div class="dropdown mx-2">
+          <a
+            class="text-reset me-3 dropdown-toggle hidden-arrow"
+            href="#"
+            role="button"
+            id="dropdownMenuLinkNoti"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false"
+          >
+          <i class="fas fa-bell"></i>
+          <span class="badge rounded-pill badge-notification bg-danger">1</span>
+          </a>
+         
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLinkNoti">
+            <li><a class="dropdown-item py-1" href="#">Action</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item py-1" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item py-1" href="#">Something else here</a></li>
+          </ul>
+        </div>
+        <!--Notifications End-->
+    
+<div class="dropdown align-items-center">
+        <a
+        class="text-reset me-3 dropdown-toggle"
+        href="#"
+        id="navbarDropdownMenuLinkProfile"
+        role="button"
+        data-mdb-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <img
+          src="{{myprofile.profile_image.url}}"
+          class="rounded-circle "
+          height="35"
+          alt=""
+          loading="lazy"
+        />
+      </a>
+      <ul
+        class="dropdown-menu"
+        aria-labelledby="navbarDropdownMenuLinkProfile"
+      >
+        <li>
+          <a class="dropdown-item" href="{% url 'usersHome' %}">My profile</a>
+        </li>
+        <li><hr class="dropdown-divider" /></li>
+        <li>
+          <a class="dropdown-item" href="{% url 'userlogout' %}">Logout</a>
+        </li>
+       </ul>
+       <span class="mb-0 px-0 text-end  fw-light text-muted" style="font-size: 13px"><strong>WELCOME {{myprofile.name | strsplit | upper }}</strong> </span>
+      </div>     
+       {% else %}
+            <a href="{% url 'usersregister' %}"> <button type="button" class="btn btn-outline-primary mx-2" data-mdb-ripple-color="dark">
+            Login/Signup
+          </button></a>
+        {% endif %}   
+  
+            </div>
+          </div>
+          <!-- Collapsible wrapper -->
+        </div>
+        <!-- Container wrapper -->
+      </nav>
+      <!-- Navbar -->

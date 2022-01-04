@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{% block content %}
+<div class="container mt-5">
+<form action="" method="POST" enctype="multipart/form-data">
+ {% csrf_token %}
+  <div class="row mb-4">
+    <div class="col">
+      <div class="form-outline">
+       {% render_field form.name type="text" class="form-control" %}
+        <label class="form-label" for="form6Example1">Full name</label>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-outline">
+       {% render_field form.email type="text" class="form-control" %}
+        <label class="form-label" for="form6Example2">Email</label>
+      </div>
+    </div>
+  </div>
+  <div class="form-outline mb-4">
+   {% render_field form.phonnumber type="number" id="typeNumber" class="form-control" %}
+    <label class="form-label" for="form6Example3">Phon Number</label>
+  </div>
+  <!-- Text input -->
+  <div class="form-outline mb-4">
+   {% render_field form.listingcity type="text" class="form-control" %}
+    <label class="form-label" for="form6Example3">Address</label>
+  </div>
+  <div class=" mb-4">
+    {% render_field form.locations class="form-select" %}
+  </div>
+  <!-- Profile Image -->
+  
+  <div class="form-outline mb-4">
+    {% render_field form.profile_image type="file" class="form-control" id="customFile"  %}   
+  </div>
+  <div class="col">
+    <div class="form-outline mb-4">
+      {% render_field form.social_facebook type="text" class="form-control" %}
+      <label class="form-label" for="form6Example6">Social facebook</label>
+    </div>
+  </div>
+ 
+  <!-- Submit button -->
+  <button type="submit" name="profilecreate" class="btn btn-primary btn-block mb-4">Create Profile</button>
+</form>
+</div>
+
+{% endblock content %}

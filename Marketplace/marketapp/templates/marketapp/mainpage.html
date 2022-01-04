@@ -1,0 +1,1524 @@
+{% extends 'base.html' %} 
+{% load myfilters %}
+{% load static %}
+{% block content %}
+
+<!--CategoryList Mobile View-->
+
+<div class="d-block  d-sm-none container">
+  <div class="row justify-content-center">
+      <div class="col-auto text-center">
+        <a
+        class="btn btn-primary  btn-block my-1"
+        data-mdb-toggle="collapse"
+        href="#collapseWithScrollbar"
+        role="button"
+        aria-expanded="false"
+        aria-controls="collapseExample"
+          >
+          View Category List
+          </a>
+      
+        <!-- Collapsed content -->
+      
+        <div class="collapse shadow-2-strong mb-2 scroll-section" id="collapseWithScrollbar"  style="max-width: auto">
+        <div class="accordion accordion-flush" id="accordionFlushExampleResponsive">
+                      
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-heading-One">
+              <button
+                class="accordion-button collapsed text-muted fs-6 p-3 "
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#flush-collapse-One"
+                aria-expanded="false"
+                aria-controls="flush-collapse-One"
+              >
+              <i class="fas fa-car fa-lg fa-fw pe-6 " style="color: #616161;"></i>
+                Automobiles
+              </button>
+            </h2>
+            <div
+              id="flush-collapse-One"
+              class="accordion-collapse collapse ps-4  pe-4 bg-light"
+              aria-labelledby="flush-heading-One"
+              data-mdb-parent="#accordionFlushExampleResponsive"
+            >
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Bikes & Scottys
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Car
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Van
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Heavy Vechiles
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Parts & Accessories
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Bike Showroom
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Car Showroom
+                </div>
+            </a>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-heading-Two">
+              <button
+                class="accordion-button collapsed text-muted fs-6 p-3"
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#flush-collapse-Two"
+                aria-expanded="false"
+                aria-controls="flush-collapse-Two"
+              > 
+              <i class="fas fa-tv fa-lg fa-fw pe-6 " style="color: #616161;"></i>
+              Computer & Peripherals 
+              </button>
+            </h2>
+            <div
+              id="flush-collapse-Two"
+              class="accordion-collapse collapse ps-4  pe-4 bg-light"
+              aria-labelledby="flush-heading-Two"
+              data-mdb-parent="#accordionFlushExampleResponsive"
+            >
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Laptops
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Laptops Accessories
+                </div>
+            </a>
+              
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Tablet & ipads
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Desktop PC 
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Networking Equipments
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Graphics & Video Cards
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+              Software
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Printers & Scanner
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Storage & Drives
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Monitors
+                </div>
+            </a>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-heading-Eleven">
+              <button
+                class="accordion-button collapsed text-muted fs-6 p-3"
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#flush-collapse-Eleven"
+                aria-expanded="false"
+                aria-controls="flush-collapse-Eleven"
+              >  
+              <i class="fas fa-mobile-alt fa-lg fa-fw pe-6 " style="color: #616161;"></i>
+              Mobile Phone & Accessories 
+              </button>
+            </h2>
+            <div
+              id="flush-collapse-Eleven"
+              class="accordion-collapse collapse ps-4  pe-4 bg-light"
+              aria-labelledby="flush-heading-Eleven"
+              data-mdb-parent="#accordionFlushExampleResponsive"
+            >          
+              <div class="border-bottom subcatlist text-muted">
+                <strong>Mobile Phone Handsets</strong>
+                </div>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Apple iphone
+                </div>
+            </a>
+              
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Samsung
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Realmi 
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Oppo
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Mi (Xiaomi)
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+              Nokia
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                OnePlus
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Others Phone
+                </div>
+            </a>
+            
+              <div class="border-bottom subcatlist text-muted">
+                <strong>Accessories</strong> 
+                </div>
+                <a href="">
+                  <div class="border-bottom subcatlist text-muted">
+                    Chargers
+                    </div>
+                </a>
+                <a href="">
+                  <div class="border-bottom subcatlist text-muted">
+                    Covers & Cases
+                    </div>
+                </a>
+                <a href="">
+                  <div class="border-bottom subcatlist text-muted">
+                    DataCables
+                    </div>
+                </a>
+                <a href="">
+                  <div class="border-bottom subcatlist text-muted">
+                    Battery & Powerbank
+                    </div>
+                </a>
+                <a href="">
+                  <div class="border-bottom subcatlist text-muted">
+                    Mobile Parts
+                    </div>
+                </a>
+                <a href="">
+                  <div class="border-bottom subcatlist text-muted">
+                    Headsets & Earphones
+                    </div>
+                </a>
+                <a href="">
+                  <div class="border-bottom subcatlist text-muted">
+                    Memory Cards
+                    </div>
+                </a>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-heading-Three">
+              <button
+                class="accordion-button collapsed text-muted fs-6 p-3"
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#flush-collapse-Three"
+                aria-expanded="false"
+                aria-controls="flush-collapse-Three"
+              >
+              <i class="fas fa-dumbbell fa-lg fa-fw pe-6 " style="color: #616161;"></i>
+              Sports & Fitness
+              </button>
+            </h2>
+            <div
+              id="flush-collapse-Three"
+              class="accordion-collapse collapse ps-4  pe-4 bg-light"
+              aria-labelledby="flush-heading-Three"
+              data-mdb-parent="#accordionFlushExampleResponsive"
+            >
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Fitness & Gym Equipment 
+                </div>
+            </a>
+              
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Bicycles
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Fitness Supplements
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Other Sporting Goods 
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Outdoor & Hiking
+                </div>
+            </a>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-heading-Four">
+              <button
+                class="accordion-button collapsed text-muted fs-6 p-3"
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#flush-collapse-Four"
+                aria-expanded="false"
+                aria-controls="flush-collapse-Four"
+              >
+              <i class="fas fa-tools fa-lg fa-fw pe-6 " style="color: #616161;"></i>
+              Services
+              </button>
+            </h2>
+            <div
+              id="flush-collapse-Four"
+              class="accordion-collapse collapse ps-4  pe-4 bg-light"
+              aria-labelledby="flush-heading-Four"
+              data-mdb-parent="#accordionFlushExampleResponsive"
+            >
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Coaching & Tutors 
+                </div>
+            </a>
+              
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Computer - Sales & Repair
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Electronics Repair 
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Event Planner & Caterers 
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Financial & Legal
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Music-Video-Photography
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Writing - Designing - Translating
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Home Construct & Design 
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Advertising-Printing-Publication  
+                </div>
+            </a>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-heading-Ten">
+              <button
+                class="accordion-button collapsed text-muted fs-6 p-3"
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#flush-collapse-Ten"
+                aria-expanded="false"
+                aria-controls="flush-collapse-Ten"
+              >
+              <i class="fas fa-briefcase fa-lg fa-fw pe-6 " style="color: #616161;"></i>
+              Jobs
+              </button>
+            </h2>
+            <div
+              id="flush-collapse-Ten"
+              class="accordion-collapse collapse ps-4  pe-4 bg-light"
+              aria-labelledby="flush-heading-Ten"
+              data-mdb-parent="#accordionFlushExampleResponsive"
+            >
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Driver
+                </div>
+            </a>
+              
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Hospitality
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Marketing
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Office Administration
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Sales Assistant
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Delivery
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Tech
+                </div>
+            </a>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-heading-Five">
+              <button
+                class="accordion-button collapsed text-muted fs-6 p-3"
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#flush-collapse-Five"
+                aria-expanded="false"
+                aria-controls="flush-collapse-Five"
+              >
+              <i class="fas fa-hotel fa-lg fa-fw pe-6 " style="color: #616161;"></i>
+              Real Estate
+              </button>
+            </h2>
+            <div
+              id="flush-collapse-Five"
+              class="accordion-collapse collapse ps-4  pe-4 bg-light"
+              aria-labelledby="flush-heading-Five"
+              data-mdb-parent="#accordionFlushExampleResponsive"
+            >
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Business & Shop For Sale
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                For Rent - Flat & Apartment
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                For Rent - House
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                For Rent - Land
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                For Rent - Office Space
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                For Rent - Shutter & Shop Space
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                For Sale - Apartments
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                For Sale - Buildings
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                For Sale - House
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                For Sale - Land
+                </div>
+            </a>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-heading-Six">
+              <button
+                class="accordion-button collapsed text-muted fs-6 p-3"
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#flush-collapse-Six"
+                aria-expanded="false"
+                aria-controls="flush-collapse-Six"
+              >
+              <i class="fas fa-user-secret fa-lg fa-fw pe-6 " style="color: #616161;"></i>
+                  Apparels & Accessories
+              </button>
+            </h2>
+            <div
+              id="flush-collapse-Six"
+              class="accordion-collapse collapse ps-4  pe-4 bg-light"
+              aria-labelledby="flush-heading-Six"
+              data-mdb-parent="#accordionFlushExampleResponsive"
+            >
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Baby & Children Accesories 
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Baby & Children Clothing 
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Men Clothing 
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Men Accessories 
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Men Shoes 
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Women Accessories 
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Women Clothing 
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Women Shoes 
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Lauggage & Bags 
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                jewellery 
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Sunglasses 
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Watches 
+                </div>
+            </a>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-heading-Seven">
+              <button
+                class="accordion-button collapsed text-muted fs-6 p-3"
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#flush-collapse-Seven"
+                aria-expanded="false"
+                aria-controls="flush-collapse-Seven"
+              >
+              <i class="fas fa-couch fa-lg fa-fw pe-4" style="color: #616161;"></i>
+              Home, Furnishing & Appliances
+              </button>
+            </h2>
+            <div
+              id="flush-collapse-Seven"
+              class="accordion-collapse collapse ps-4  pe-4 bg-light"
+              aria-labelledby="flush-heading-Seven"
+              data-mdb-parent="#accordionFlushExampleResponsive"
+            >
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Home Appliances
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Home Decor & Interiors
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Home Furniture
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Kitchen Appliances
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Lightning, Solar & Electricals 
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Constructions Materials 
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Foods and Drinks 
+                </div>
+            </a> 
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Bath Sanitary & Fitting 
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Inverter & Generator (upto 2kva) 
+                </div>
+            </a>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-heading-Eight">
+              <button
+                class="accordion-button collapsed text-muted fs-6 p-3"
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#flush-collapse-Eight"
+                aria-expanded="false"
+                aria-controls="flush-collapse-Eight"
+              >
+              <i class="fas fa-server fa-lg fa-fw pe-4" style="color: #616161;"></i>
+                Electronics items
+              </button>
+            </h2>
+            <div
+              id="flush-collapse-Eight"
+              class="accordion-collapse collapse ps-4  pe-4 bg-light"
+              aria-labelledby="flush-heading-Eight"
+              data-mdb-parent="#accordionFlushExampleResponsive"
+            >
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                LCD/LED TV
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Sound System
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+              Headphon & Earphons
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+              Digital Camera
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                DIY & Hobby Electronics 
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Drone & Quadcopter 
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                Portable Bluetooth Speakers 
+                </div>
+            </a>
+            <a href="">
+              <div class="border-bottom subcatlist text-muted">
+                SetTop Box 
+                </div>
+            </a>
+            </div>
+          </div>
+            </div>
+        </div>
+      </div>
+  </div>
+</div>
+<!-- Button triggers collapse -->
+<!--accordionFlushExampleResponsive  End -->
+</div>
+
+
+<!--CategoryList Mobile View-->
+
+<section class="intro">
+  <div class="bg-image h-100" style="
+          background-image: url({% static 'img/2414353.jpg' %});
+        ">
+    <div class="mask d-flex align-items-center h-100" style="background-color: rgba(5, 5, 5, 0.5);">
+      <div class="container">
+        <p class="h1 mb-2 mt-2  text-warning text-uppercase text-center">Search your products</p>
+        <div class="card" style="background-color: rgba(0,0,0,.7);">
+          <div class="card-body p-4">
+            <div class="row">
+              <form action="#" method="GET">
+              <div class="col-lg-12 col-xl-10 d-lg-flex text-center flex-row mb-lg-4 mb-xl-0">              
+                <div id="basic" class="form-outline form-white flex-fill me-lg-2 mb-3 mb-lg-0">
+                  <input type="text" id="form1" class="form-control" value="{{searchproduct_query}}" name="searchproduct_query" />
+                  <label class="form-label" for="form1">What are you looking for?</label>
+                </div>
+                <div class="form-outline datepicker form-white flex-fill mx-lg-2 mb-3 mb-lg-0" data-mdb-toggle-button="false">
+                  <input type="text" class="form-control" id="exampleDatepicker1" value="{{searchlocation_query}}" name="searchlocation_query" data-mdb-toggle="datepicker" />
+                  <label for="exampleDatepicker1" class="form-label">Location</label>
+                </div>
+                <div class="col-lg-12 col-xl-2">
+                  <input class="btn btn-primary btn-rounded btn-block" type="submit" value="Search" />
+                </div>
+              </div>
+             
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+   <!--Owl Carousel Slides--> 
+   <section class="container my-4">   
+    <div class="owl-carousel owl-theme">
+      {% for item in brandnew %}
+        <div style="width:150px; height:150px;color:white;background-color:black;">
+          <img class="img-fluid" src="{{item.listingImages_set.featured_image.url | strsplit}}"
+                alt="Card image cap" height="200px" />
+        </div>
+        {% endfor %}
+    </div>
+  </section> 
+    <!--Owl Carousel slides End-->
+<main class="mt-4 container-fluid">
+  <div class="sideandmain bg-light mt-3">
+    <div class="row ">
+      <div class="col-md-auto d-none d-sm-block">
+        <div class="sticky-top" style="top: 20px">
+          <button class="btn btn-primary btn-block shadow-3" type="button">
+            View Category List
+          </button>
+        
+            <div class="shadow-3" style="height: auto;">
+              <div class="">
+                <div style="width: auto;">
+                  <div class="accordion accordion-flush" id="accordionFlushExample">
+                    
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingOne">
+                        <button
+                          class="accordion-button maincatlist collapsed text-muted p-3 "
+                          type="button"
+                          data-mdb-toggle="collapse"
+                          data-mdb-target="#flush-collapseOne"
+                          aria-expanded="false"
+                          aria-controls="flush-collapseOne"
+                        >
+                       
+                        <i class="fas fa-car fa-lg fa-fw pe-6 " style="color: #616161;"></i>
+                         <h6 class="categoryitem">Automobiles</h6> 
+                        
+                        </button>
+                      </h2>
+                      <div
+                        id="flush-collapseOne"
+                        class="accordion-collapse collapse ps-4  pe-4 bg-light"
+                        aria-labelledby="flush-headingOne"
+                        data-mdb-parent="#accordionFlushExample"
+                      >
+                      <a href="{% url 'productwise' 'Bikes' %}">
+                        <div class="border-bottom subcatlist text-muted">
+                          Bikes & Scottys ({{count_bikes}})
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Car
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Van
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Heavy Vechiles
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Parts & Accessories
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Bike Showroom
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Car Showroom
+                          </div>
+                      </a>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingTwo">
+                        <button
+                          class="accordion-button maincatlist collapsed text-muted p-3"
+                          type="button"
+                          data-mdb-toggle="collapse"
+                          data-mdb-target="#flush-collapseTwo"
+                          aria-expanded="false"
+                          aria-controls="flush-collapseTwo"
+                        > 
+                        <i class="fas fa-tv fa-lg fa-fw pe-6 " style="color: #616161;"></i>
+                        <h6 class="categoryitem">Computer & Peripherals</h6> 
+                         
+                        </button>
+                      </h2>
+                      <div
+                        id="flush-collapseTwo"
+                        class="accordion-collapse collapse ps-4  pe-4 bg-light"
+                        aria-labelledby="flush-headingTwo"
+                        data-mdb-parent="#accordionFlushExample"
+                      >
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Laptops
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Laptops Accessories
+                          </div>
+                      </a>
+                        
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Tablet & ipads
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Desktop PC 
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Networking Equipments
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Graphics & Video Cards
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                        Software
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Printers & Scanner
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Storage & Drives
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Monitors
+                          </div>
+                      </a>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingEleven">
+                        <button
+                          class="accordion-button maincatlist collapsed text-muted p-3"
+                          type="button"
+                          data-mdb-toggle="collapse"
+                          data-mdb-target="#flush-collapseEleven"
+                          aria-expanded="false"
+                          aria-controls="flush-collapseEleven"
+                        >  
+                        <i class="fas fa-mobile-alt fa-lg fa-fw pe-6 " style="color: #616161;"></i>
+                        <h6 class="categoryitem">Mobile Phone & Accessories</h6> 
+                        </button>
+                      </h2>
+                      <div
+                        id="flush-collapseEleven"
+                        class="accordion-collapse collapse ps-4  pe-4 bg-light"
+                        aria-labelledby="flush-headingEleven"
+                        data-mdb-parent="#accordionFlushExample"
+                      >          
+                        <div class="border-bottom subcatlist text-muted">
+                          <strong>Mobile Phone Handsets</strong>
+                          </div>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Apple iphone
+                          </div>
+                      </a>
+                        
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Samsung
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Realmi 
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Oppo
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Mi (Xiaomi)
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                        Nokia
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          OnePlus
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Others Phone
+                          </div>
+                      </a>
+                      
+                        <div class="border-bottom subcatlist text-muted">
+                          <strong>Accessories</strong> 
+                          </div>
+                          <a href="">
+                            <div class="border-bottom subcatlist text-muted">
+                              Chargers
+                              </div>
+                          </a>
+                          <a href="">
+                            <div class="border-bottom subcatlist text-muted">
+                              Covers & Cases
+                              </div>
+                          </a>
+                          <a href="">
+                            <div class="border-bottom subcatlist text-muted">
+                              DataCables
+                              </div>
+                          </a>
+                          <a href="">
+                            <div class="border-bottom subcatlist text-muted">
+                              Battery & Powerbank
+                              </div>
+                          </a>
+                          <a href="">
+                            <div class="border-bottom subcatlist text-muted">
+                              Mobile Parts
+                              </div>
+                          </a>
+                          <a href="">
+                            <div class="border-bottom subcatlist text-muted">
+                              Headsets & Earphones
+                              </div>
+                          </a>
+                          <a href="">
+                            <div class="border-bottom subcatlist text-muted">
+                              Memory Cards
+                              </div>
+                          </a>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingThree">
+                        <button
+                          class="accordion-button maincatlist collapsed text-muted p-3"
+                          type="button"
+                          data-mdb-toggle="collapse"
+                          data-mdb-target="#flush-collapseThree"
+                          aria-expanded="false"
+                          aria-controls="flush-collapseThree"
+                        >
+                        <i class="fas fa-dumbbell fa-lg fa-fw pe-6 " style="color: #616161;"></i>                       
+                        <h6 class="categoryitem">Sports & Fitness</h6>
+                        </button>
+                      </h2>
+                      <div
+                        id="flush-collapseThree"
+                        class="accordion-collapse collapse ps-4  pe-4 bg-light"
+                        aria-labelledby="flush-headingThree"
+                        data-mdb-parent="#accordionFlushExample"
+                      >
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Fitness & Gym Equipment 
+                          </div>
+                      </a>
+                        
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Bicycles
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Fitness Supplements
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Other Sporting Goods 
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Outdoor & Hiking
+                          </div>
+                      </a>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingFour">
+                        <button
+                          class="accordion-button maincatlist collapsed text-muted p-3"
+                          type="button"
+                          data-mdb-toggle="collapse"
+                          data-mdb-target="#flush-collapseFour"
+                          aria-expanded="false"
+                          aria-controls="flush-collapseFour"
+                        >
+                        <i class="fas fa-tools fa-lg fa-fw pe-6 " style="color: #616161;"></i>
+                        <h6 class="categoryitem">Services</h6>
+                        </button>
+                      </h2>
+                      <div
+                        id="flush-collapseFour"
+                        class="accordion-collapse collapse ps-4  pe-4 bg-light"
+                        aria-labelledby="flush-headingFour"
+                        data-mdb-parent="#accordionFlushExample"
+                      >
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Coaching & Tutors 
+                          </div>
+                      </a>
+                        
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Computer - Sales & Repair
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Electronics Repair 
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Event Planner & Caterers 
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Financial & Legal
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Music-Video-Photography
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Writing - Designing - Translating
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Home Construct & Design 
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Advertising-Printing-Publication  
+                          </div>
+                      </a>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingTen">
+                        <button
+                          class="accordion-button maincatlist collapsed text-muted p-3"
+                          type="button"
+                          data-mdb-toggle="collapse"
+                          data-mdb-target="#flush-collapseTen"
+                          aria-expanded="false"
+                          aria-controls="flush-collapseTen"
+                        >
+                        <i class="fas fa-briefcase fa-lg fa-fw pe-6 " style="color: #616161;"></i>
+                        <h6 class="categoryitem">jobs</h6>
+                        </button>
+                      </h2>
+                      <div
+                        id="flush-collapseTen"
+                        class="accordion-collapse collapse ps-4  pe-4 bg-light"
+                        aria-labelledby="flush-headingTen"
+                        data-mdb-parent="#accordionFlushExample"
+                      >
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Driver
+                          </div>
+                      </a>
+                        
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Hospitality
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Marketing
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Office Administration
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Sales Assistant
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Delivery
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Tech
+                          </div>
+                      </a>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingFive">
+                        <button
+                          class="accordion-button maincatlist collapsed text-muted p-3"
+                          type="button"
+                          data-mdb-toggle="collapse"
+                          data-mdb-target="#flush-collapseFive"
+                          aria-expanded="false"
+                          aria-controls="flush-collapseFive"
+                        >
+                        <i class="fas fa-hotel fa-lg fa-fw pe-6 " style="color: #616161;"></i>
+                        <h6 class="categoryitem">Real Estate</h6>
+                        </button>
+                      </h2>
+                      <div
+                        id="flush-collapseFive"
+                        class="accordion-collapse collapse ps-4  pe-4 bg-light"
+                        aria-labelledby="flush-headingFive"
+                        data-mdb-parent="#accordionFlushExample"
+                      >
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Business & Shop For Sale
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          For Rent - Flat & Apartment
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          For Rent - House
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          For Rent - Land
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          For Rent - Office Space
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          For Rent - Shutter & Shop Space
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          For Sale - Apartments
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          For Sale - Buildings
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          For Sale - House
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          For Sale - Land
+                          </div>
+                      </a>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingSix">
+                        <button
+                          class="accordion-button maincatlist collapsed text-muted p-3"
+                          type="button"
+                          data-mdb-toggle="collapse"
+                          data-mdb-target="#flush-collapseSix"
+                          aria-expanded="false"
+                          aria-controls="flush-collapseSix"
+                        >
+                        <i class="fas fa-user-secret fa-lg fa-fw pe-6 " style="color: #616161;"></i>
+                        <h6 class="categoryitem">Apparels & Accessories</h6>
+                        </button>
+                      </h2>
+                      <div
+                        id="flush-collapseSix"
+                        class="accordion-collapse collapse ps-4  pe-4 bg-light"
+                        aria-labelledby="flush-headingSix"
+                        data-mdb-parent="#accordionFlushExample"
+                      >
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Baby & Children Accesories 
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Baby & Children Clothing 
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Men Clothing 
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Men Accessories 
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Men Shoes 
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Women Accessories 
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Women Clothing 
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Women Shoes 
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Lauggage & Bags 
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          jewellery 
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Sunglasses 
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Watches 
+                          </div>
+                      </a>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingSeven">
+                        <button
+                          class="accordion-button maincatlist collapsed text-muted p-3"
+                          type="button"
+                          data-mdb-toggle="collapse"
+                          data-mdb-target="#flush-collapseSeven"
+                          aria-expanded="false"
+                          aria-controls="flush-collapseSeven"
+                        >
+                        <i class="fas fa-couch fa-lg fa-fw pe-4" style="color: #616161;"></i>
+                       <h6 class="categoryitem">Home, Furnishing & Appliances</h6> 
+                        </button>
+                      </h2>
+                      <div
+                        id="flush-collapseSeven"
+                        class="accordion-collapse collapse ps-4  pe-4 bg-light"
+                        aria-labelledby="flush-headingSeven"
+                        data-mdb-parent="#accordionFlushExample"
+                      >
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Home Appliances
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Home Decor & Interiors
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Home Furniture
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Kitchen Appliances
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Lightning, Solar & Electricals 
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Constructions Materials 
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Foods and Drinks 
+                          </div>
+                      </a> 
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Bath Sanitary & Fitting 
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Inverter & Generator (upto 2kva) 
+                          </div>
+                      </a>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingEight">
+                        <button
+                          class="accordion-button maincatlist collapsed text-muted p-3"
+                          type="button"
+                          data-mdb-toggle="collapse"
+                          data-mdb-target="#flush-collapseEight"
+                          aria-expanded="false"
+                          aria-controls="flush-collapseEight"
+                        >
+                        <i class="fas fa-server fa-lg fa-fw pe-4" style="color: #616161;"></i>
+                          <h6 class="categoryitem">Electronics items</h6>
+                        </button>
+                      </h2>
+                      <div
+                        id="flush-collapseEight"
+                        class="accordion-collapse collapse ps-4  pe-4 bg-light"
+                        aria-labelledby="flush-headingEight"
+                        data-mdb-parent="#accordionFlushExample"
+                      >
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          LCD/LED TV
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Sound System
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                        Headphon & Earphons
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                        Digital Camera
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          DIY & Hobby Electronics 
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Drone & Quadcopter 
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          Portable Bluetooth Speakers 
+                          </div>
+                      </a>
+                      <a href="">
+                        <div class="border-bottom subcatlist text-muted">
+                          SetTop Box 
+                          </div>
+                      </a>
+                      </div>
+                    </div>
+                      </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+  <div class="col-md-8">
+    <div class="row">
+  {% for item in products %}
+      <div class="col">
+      <div class="card" style="width: 12rem; height: 18rem">
+        <div class="card-body border-bottom p-2 align-items-center d-flex flex-row">
+          <img src="{% static 'img/crush.jpg' %}" class="rounded-circle me-3" height="50px"
+            width="50px" alt="avatar" />
+            
+          <div>
+            <h5 class="card-title font-weight-bold ">{{item.title}}</h5>           
+          </div>
+        </div>
+        <div class="p-1 text-center">
+          <p class="card-text"><i class="far fa-clock pe-2"></i>{{item.created}}</p>
+        </div>
+        <div class="bg-image hover-overlay ripple rounded-0" data-mdb-ripple-color="warning">
+          <img class="img-fluid" src="{{item.listingImages_set.featured_image.url}}"
+            alt="Card image cap" height="200px" />
+          <a href="{% url 'singleproduct' item.id %}">
+            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+          </a>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block mb-2 mt-2">View more</button>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+</div>   
+    </div>
+   
+  </div>
+</main>
+{% endblock content %}
