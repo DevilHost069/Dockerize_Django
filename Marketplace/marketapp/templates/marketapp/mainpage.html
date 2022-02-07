@@ -766,8 +766,10 @@
     <div class="owl-carousel owl-theme">
       {% for item in brandnew %}
         <div style="width:150px; height:150px;color:white;background-color:black;">
-          <img class="img-fluid" src="{{item.listingImages_set.featured_image.url | strsplit}}"
-                alt="Card image cap" height="200px" />
+ 
+          <img class="img-fluid" src="{{item.featured_image.url}}"
+                alt="Card image cap" height="200px"/>
+         
         </div>
         {% endfor %}
     </div>
@@ -814,36 +816,27 @@
                           Bikes & Scottys ({{count_bikes}})
                           </div>
                       </a>
-                      <a href="">
+                      <a href="{% url 'productwise' 'Car' %}">
                         <div class="border-bottom subcatlist text-muted">
                           Car
                           </div>
                       </a>
-                      <a href="">
+                      <a href="{% url 'productwise' 'Van' %}">
                         <div class="border-bottom subcatlist text-muted">
                           Van
                           </div>
                       </a>
-                      <a href="">
+                      <a href="{% url 'productwise' 'HeavyVechiles' %}">
                         <div class="border-bottom subcatlist text-muted">
                           Heavy Vechiles
                           </div>
                       </a>
-                      <a href="">
+                      <a href="{% url 'productwise' 'PartsAccessories' %}">
                         <div class="border-bottom subcatlist text-muted">
                           Parts & Accessories
                           </div>
                       </a>
-                      <a href="">
-                        <div class="border-bottom subcatlist text-muted">
-                          Bike Showroom
-                          </div>
-                      </a>
-                      <a href="">
-                        <div class="border-bottom subcatlist text-muted">
-                          Car Showroom
-                          </div>
-                      </a>
+                     
                       </div>
                     </div>
                     <div class="accordion-item">
@@ -867,53 +860,45 @@
                         aria-labelledby="flush-headingTwo"
                         data-mdb-parent="#accordionFlushExample"
                       >
-                      <a href="">
+                      <a href="{% url 'productwisepc' 'Laptops' %}">
                         <div class="border-bottom subcatlist text-muted">
                           Laptops
                           </div>
                       </a>
-                      <a href="">
+                      <a href="{% url 'productwisepc' 'Laptops-Accessories' %}">
                         <div class="border-bottom subcatlist text-muted">
                           Laptops Accessories
                           </div>
                       </a>
                         
-                      <a href="">
-                        <div class="border-bottom subcatlist text-muted">
-                          Tablet & ipads
-                          </div>
-                      </a>
-                      <a href="">
+                    
+                      <a href="{% url 'productwisepc' 'DesktopPC' %}">
                         <div class="border-bottom subcatlist text-muted">
                           Desktop PC 
                           </div>
                       </a>
-                      <a href="">
+                      <a href="{% url 'productwisepc' 'Networking-Equipments' %}">
                         <div class="border-bottom subcatlist text-muted">
                           Networking Equipments
                           </div>
                       </a>
-                      <a href="">
+                      <a href="{% url 'productwisepc' 'Graphics-Video-Cards' %}">
                         <div class="border-bottom subcatlist text-muted">
                           Graphics & Video Cards
                           </div>
                       </a>
-                      <a href="">
-                        <div class="border-bottom subcatlist text-muted">
-                        Software
-                          </div>
-                      </a>
-                      <a href="">
+                    
+                      <a href="{% url 'productwisepc' 'Printers-Scanners' %}">
                         <div class="border-bottom subcatlist text-muted">
                           Printers & Scanner
                           </div>
                       </a>
-                      <a href="">
+                      <a href="{% url 'productwisepc' 'Storage-Drives' %}">
                         <div class="border-bottom subcatlist text-muted">
                           Storage & Drives
                           </div>
                       </a>
-                      <a href="">
+                      <a href="{% url 'productwisepc' 'Monitors' %}">
                         <div class="border-bottom subcatlist text-muted">
                           Monitors
                           </div>
@@ -943,43 +928,43 @@
                         <div class="border-bottom subcatlist text-muted">
                           <strong>Mobile Phone Handsets</strong>
                           </div>
-                      <a href="">
+                      <a href="{% url 'productwisemobile' 'Apple-Iphone' %}">
                         <div class="border-bottom subcatlist text-muted">
                           Apple iphone
                           </div>
                       </a>
                         
-                      <a href="">
+                      <a href="{% url 'productwisemobile' 'Samsung' %}">
                         <div class="border-bottom subcatlist text-muted">
                           Samsung
                           </div>
                       </a>
-                      <a href="">
+                      <a href="{% url 'productwisemobile' 'Realmi' %}">
                         <div class="border-bottom subcatlist text-muted">
                           Realmi 
                           </div>
                       </a>
-                      <a href="">
+                      <a href="{% url 'productwisemobile' 'Oppo' %}">
                         <div class="border-bottom subcatlist text-muted">
                           Oppo
                           </div>
                       </a>
-                      <a href="">
+                      <a href="{% url 'productwisemobile' 'Mi-Xiaomi' %}">
                         <div class="border-bottom subcatlist text-muted">
                           Mi (Xiaomi)
                           </div>
                       </a>
-                      <a href="">
+                      <a href="{% url 'productwisemobile' 'Nokia' %}">
                         <div class="border-bottom subcatlist text-muted">
                         Nokia
                           </div>
                       </a>
-                      <a href="">
+                      <a href="{% url 'productwisemobile' 'OnePlus' %}">
                         <div class="border-bottom subcatlist text-muted">
                           OnePlus
                           </div>
                       </a>
-                      <a href="">
+                      <a href="{% url 'productwisemobile' 'Other-Phones' %}">
                         <div class="border-bottom subcatlist text-muted">
                           Others Phone
                           </div>
@@ -1219,52 +1204,44 @@
                         aria-labelledby="flush-headingFive"
                         data-mdb-parent="#accordionFlushExample"
                       >
-                      <a href="">
+                      <a href="{% url 'productwiseRealState' 'ForSale-Business-And-Shop' %}">
                         <div class="border-bottom subcatlist text-muted">
-                          Business & Shop For Sale
+                          For Sale - Business & Shop 
                           </div>
                       </a>
-                      <a href="">
-                        <div class="border-bottom subcatlist text-muted">
-                          For Rent - Flat & Apartment
-                          </div>
-                      </a>
-                      <a href="">
+                     
+                      <a href="{% url 'productwiseRealState' 'ForRent-House' %}">
                         <div class="border-bottom subcatlist text-muted">
                           For Rent - House
                           </div>
                       </a>
-                      <a href="">
+                      <a href="{% url 'productwiseRealState' 'ForRent-Land' %}">
                         <div class="border-bottom subcatlist text-muted">
                           For Rent - Land
                           </div>
                       </a>
-                      <a href="">
+                      <a href="{% url 'productwiseRealState' 'ForRent-Office_Space' %}">
                         <div class="border-bottom subcatlist text-muted">
                           For Rent - Office Space
                           </div>
                       </a>
-                      <a href="">
+                      <a href="{% url 'productwiseRealState' 'ForRent_Shutter_Shop_Space' %}">
                         <div class="border-bottom subcatlist text-muted">
                           For Rent - Shutter & Shop Space
                           </div>
                       </a>
-                      <a href="">
+                      <a href="{% url 'productwiseRealState' 'ForSale_Appartments' %}">
                         <div class="border-bottom subcatlist text-muted">
                           For Sale - Apartments
                           </div>
                       </a>
-                      <a href="">
-                        <div class="border-bottom subcatlist text-muted">
-                          For Sale - Buildings
-                          </div>
-                      </a>
-                      <a href="">
+                     
+                      <a href="{% url 'productwiseRealState' 'ForSale_House' %}">
                         <div class="border-bottom subcatlist text-muted">
                           For Sale - House
                           </div>
                       </a>
-                      <a href="">
+                      <a href="{% url 'productwiseRealState' 'ForSale_Land' %}">
                         <div class="border-bottom subcatlist text-muted">
                           For Sale - Land
                           </div>
@@ -1291,62 +1268,62 @@
                         aria-labelledby="flush-headingSix"
                         data-mdb-parent="#accordionFlushExample"
                       >
-                      <a href="">
+                      <a href="{% url 'productwiseApparels' 'BabyChildren-Accessories' %}">
                         <div class="border-bottom subcatlist text-muted">
                           Baby & Children Accesories 
                           </div>
                       </a>
-                      <a href="">
+                      <a href="{% url 'productwiseApparels' 'BabyChildren-Clothing' %}">
                         <div class="border-bottom subcatlist text-muted">
                           Baby & Children Clothing 
                           </div>
                       </a>
-                      <a href="">
+                      <a href="{% url 'productwiseApparels' 'Men-Clothing' %}">
                         <div class="border-bottom subcatlist text-muted">
                           Men Clothing 
                           </div>
                       </a>
-                      <a href="">
+                      <a href="{% url 'productwiseApparels' 'Men-Accessories' %}">
                         <div class="border-bottom subcatlist text-muted">
                           Men Accessories 
                           </div>
                       </a>
-                      <a href="">
+                      <a href="{% url 'productwiseApparels' 'Men-Shoes' %}">
                         <div class="border-bottom subcatlist text-muted">
                           Men Shoes 
                           </div>
                       </a>
-                      <a href="">
+                      <a href="{% url 'productwiseApparels' 'Women-Accessories' %}">
                         <div class="border-bottom subcatlist text-muted">
                           Women Accessories 
                           </div>
                       </a>
-                      <a href="">
+                      <a href="{% url 'productwiseApparels' 'Women-Clothing' %}">
                         <div class="border-bottom subcatlist text-muted">
                           Women Clothing 
                           </div>
                       </a>
-                      <a href="">
+                      <a href="{% url 'productwiseApparels' 'Womens-shoes' %}">
                         <div class="border-bottom subcatlist text-muted">
                           Women Shoes 
                           </div>
                       </a>
-                      <a href="">
+                      <a href="{% url 'productwiseApparels' 'Lauggage-Bags' %}">
                         <div class="border-bottom subcatlist text-muted">
                           Lauggage & Bags 
                           </div>
                       </a>
-                      <a href="">
+                      <a href="{% url 'productwiseApparels' 'Jewellery' %}">
                         <div class="border-bottom subcatlist text-muted">
                           jewellery 
                           </div>
                       </a>
-                      <a href="">
+                      <a href="{% url 'productwiseApparels' 'Sunglasses' %}">
                         <div class="border-bottom subcatlist text-muted">
                           Sunglasses 
                           </div>
                       </a>
-                      <a href="">
+                      <a href="{% url 'productwiseApparels' 'Watches' %}">
                         <div class="border-bottom subcatlist text-muted">
                           Watches 
                           </div>
@@ -1491,7 +1468,7 @@
   <div class="col-md-8">
     <div class="row">
   {% for item in products %}
-      <div class="col">
+      <div class="col gy-3">
       <div class="card" style="width: 12rem; height: 18rem">
         <div class="card-body border-bottom p-2 align-items-center d-flex flex-row">
           <img src="{% static 'img/crush.jpg' %}" class="rounded-circle me-3" height="50px"
@@ -1505,8 +1482,10 @@
           <p class="card-text"><i class="far fa-clock pe-2"></i>{{item.created}}</p>
         </div>
         <div class="bg-image hover-overlay ripple rounded-0" data-mdb-ripple-color="warning">
-          <img class="img-fluid" src="{{item.listingImages_set.featured_image.url}}"
+          {% for img in item.listingimages_set.all|slice:'1' %}
+            <img class="img-fluid" src="{{img.featured_image.url}}"
             alt="Card image cap" height="200px" />
+          {% endfor %}
           <a href="{% url 'singleproduct' item.id %}">
             <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
           </a>

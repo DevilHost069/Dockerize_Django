@@ -41,6 +41,12 @@ body,
 .labelselect{
   font-size: 15px;
 }
+.commentReply{
+  font-size: 14px;
+} 
+.commentReplybtn{
+  font-size: 10px;
+}
 
 .loginregister{
   height: 100%;
@@ -105,4 +111,9 @@ box-shadow: 6px 4px 6px 6px #e9ecef;
 }
 .displaynonefield{
   display: none;
+}
+.remove-default-btn {
+	background-color: transparent;
+	border: none;
+	box-shadow: none;
 }

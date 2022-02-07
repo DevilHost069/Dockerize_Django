@@ -112,6 +112,8 @@ class Listingproducts(models.Model):
     conditions = models.CharField(max_length=200, choices=condition_type, null=True)
     userfor = models.CharField(max_length=200, blank=True, null=True)
     descriptions = models.TextField(max_length=200,null=True)
+    likes = models.ManyToManyField(Userprofile, blank=True, related_name='likes')
+    dislikes = models.ManyToManyField(Userprofile, blank=True, related_name='dislikes')
     created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
   
@@ -124,7 +126,7 @@ class Listingproducts(models.Model):
         return queryset
     
 class Listingimages(models.Model):
-    listingproducts = models.ForeignKey(Listingproducts,on_delete=models.CASCADE,null=True)
+    listingproducts = models.ForeignKey(Listingproducts,on_delete=models.CASCADE, null=True)
     featured_image = models.ImageField(null=True, default='default.jpg')
     created = models.DateTimeField(auto_now_add=True,null=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
@@ -153,17 +155,23 @@ class Listingimages(models.Model):
 #         return str("Computers Items Features")
 
 class Review(models.Model):
-        vote_type = (('up', 'Up Vote'), ('down', 'Down Vote'))
         owner = models.ForeignKey(Userprofile, on_delete=models.CASCADE, null=True)
         body = models.TextField(null=True, blank=True)
         project = models.ForeignKey(Listingproducts, on_delete=models.CASCADE, null=True)
-        value = models.CharField(max_length=200, choices=vote_type, null=True)
+        parent = models.ForeignKey('self',on_delete=models.CASCADE,blank=True, null=True,related_name='+')
         created = models.DateTimeField(auto_now_add=True)
         id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
-        class Meta:
-            unique_together = [['owner', 'project']]
-        def __str__(self):
-            return str(self.value)
+        # class Meta:
+        #     unique_together = [['owner', 'project']]
+        @property
+        def children(self):
+            return Review.objects.filter(parent=self).order_by('-created').all()
+
+        @property
+        def is_parent(self):
+            if self.parent is None:
+                return True
+            return False
 
 

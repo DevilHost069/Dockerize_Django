@@ -14,7 +14,7 @@ class ListingForm(forms.ModelForm):
     # email = forms.EmailField(validators=[starts_with_a])
     class Meta:
         model = Listingproducts
-        exclude = ['owner']
+        exclude = ['owner','likes','dislikes']
         # labels = {'title':'Enter title','phon':'Enter phon', 'name':'Enter name','email':'Enter email','price':'Enter price','isdeliver':'Enter isdeliver','country':'Enter country'}
         # error_messages = {'name':{'required':'Name field is required'}}
     def __init__(self, *args, **kwargs):
@@ -43,3 +43,4 @@ class ReviewForm(ModelForm):
     class Meta:
         model = Review
         fields = ['body']
+        # widgets = {'fieldname': forms.HiddenInput()}

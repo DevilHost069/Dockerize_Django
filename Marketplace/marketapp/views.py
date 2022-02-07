@@ -1,14 +1,14 @@
+from unittest.result import failfast
 from django.contrib.auth.models import User
 from django.db import connection
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
-from .models import Listingproducts,Userprofile,Category,Subcategory,Listingimages
+from .models import Listingproducts,Userprofile,Category,Subcategory,Listingimages,Review 
 from .forms import ListingForm,ReviewForm
 from django.contrib import messages
 from django.core.mail import send_mail
-from django.http import JsonResponse
 # Create your views here.
 #   search_query = ''
 #     if request.GET.get('search_query'):
@@ -27,48 +27,107 @@ def mainpage(request):
     if request.GET.get('searchproduct_query') or request.GET.get('searchlocation_query'):
         searchproduct_query = request.GET.get('searchproduct_query')
         searchlocation_query = request.GET.get('searchlocation_query')
+    # products = Listingproducts.objects.distinct().filter(
+    #     Q(title__icontains=searchproduct_query) 
+    #     # Q(city__icontains=searchlocation_query) |
+    #     # Q(districts__icontains=searchlocation_query)
+    # ) 
     products = Listingproducts.objects.distinct().filter(
-        Q(title__icontains=searchproduct_query) 
-        # Q(city__icontains=searchlocation_query) |
-        # Q(districts__icontains=searchlocation_query)
-    )
-    # productslist = Listingproducts.objects.prefetch_related(listingimages)
+        Q(title__icontains=searchproduct_query)
+        ).prefetch_related('listingimages_set')
     
-    for i in products:
-        print(i.title, i.category.name,i.owner.email)
-    #     productsImage = Listingimages.objects.filter(listingproducts__id=i.id)
-    
-    #     print(f"Image: {productsImage.query}")
-    # print(f"Image: {productslist}")
     
     count_bikes=Listingproducts.objects.filter(subcategory__name='Bikes').count()
     context = {'products': products,'count_bikes':count_bikes}
     return render(request, 'marketapp/mainpage.html', context)
 
-def productwise(request, data=None):
+def productwiseAutomobiles(request, data=None):
     product_page = 'Automobiles'
     if data == None:
         pass
-    elif data == 'Bikes':
-        subcatobj = Listingproducts.objects.filter(subcategory__name=data)
-        print(subcatobj.query)
-        print(f"This is {data} {subcatobj}")
-    context = {'subcatobj':subcatobj, 'product_page':product_page}
-    return render(request, 'marketapp/productwise.html', context)
+    elif data in  ['Bikes','Car','Van','HeavyVechiles','PartsAccessories']:
+        subcatobj = Listingproducts.objects.filter(subcategory__name=data).prefetch_related('listingimages_set')
+        context = {'subcatobj':subcatobj, 'product_page':product_page}
+        return render(request, 'marketapp/productwise.html', context)
+
+def productwisepc(request,data=None):
+    product_page_pc = 'PC'
+    if data == None:
+        pass
+    elif data in ['Laptops','Laptops-Accessories','DesktopPC','Networking-Equipments','Graphics-Video-Cards','Printers-Scanners','Storage-Drives','Monitors']:
+        subcatobjpc = Listingproducts.objects.filter(subcategory__name=data).prefetch_related('listingimages_set')
+        context = {'subcatobjpc':subcatobjpc, 'product_page_pc':product_page_pc}
+        return render(request, 'marketapp/productwise.html', context)
+
+def productwisemobile(request, data=None):
+    product_page_mobile = 'mobile'
+    if data == None:
+        pass
+    elif data in ['Apple-Iphone','Samsung','Realmi','Oppo','Mi-Xiaomi','Nokia','OnePlus','Other-Phones']:
+        subcatobjmobile = Listingproducts.objects.filter(subcategory__name=data).prefetch_related('listingimages_set')
+        context = {'subcatobjmobile':subcatobjmobile, 'product_page_mobile':product_page_mobile}
+        return render(request, 'marketapp/productwise.html', context)
+
+def productwiseApparels(request, data=None):
+    product_page_apparels = 'apparels'
+    if data == None:
+        pass
+    elif data in ['BabyChildren-Accessories','BabyChildren-Clothing','Men-Clothing','Men-Accessories','Men-Shoes','Women-Accessories','Women-Clothing','Womens-shoes','Lauggage-Bags','Jewellery','Sunglasses','Watches',]:
+        subcatobjapparels = Listingproducts.objects.filter(subcategory__name=data).prefetch_related('listingimages_set')
+        context = {'subcatobjapparels':subcatobjapparels, 'product_page_apparels':product_page_apparels}
+        return render(request, 'marketapp/productwise.html', context)
+
+def productwiseRealState(request, data=None):
+    product_page_RealState = 'RealState'
+    if data == None:
+        pass
+    elif data in ['ForSale_Land','ForSale_House','ForSale_Appartments','ForRent_Shutter_Shop_Space','ForRent-Office_Space','ForRent-Land','ForRent-House','ForSale-Business-And-Shop',]:
+        print(f"DatainURL: {data}")
+        subcatobjRealState = Listingproducts.objects.filter(subcategory__name=data).prefetch_related('listingimages_set')
+        for i in subcatobjRealState:
+            for h in i.listingimages_set.all():
+                print(f"HouseName is: {h.featured_image}")
+        context = {'subcatobjRealState':subcatobjRealState, 'product_page_RealState':product_page_RealState}
+        return render(request, 'marketapp/productwise.html', context)
+
+
 def singleproduct(request,pk):
     singleitem = Listingproducts.objects.get(id=pk)
     itemsprofile = Userprofile.objects.distinct().get(listingproducts__owner=singleitem.owner)
+    listingimages = Listingimages.objects.filter(listingproducts_id=singleitem.id)
+    
+   
+
     form = ReviewForm()
     if  request.method == 'POST':
         if 'reviewsubmit' in request.POST:
+           
             form = ReviewForm(request.POST)
             if form.is_valid():
-                review = form.save(commit=False)
-                review.project = singleitem
-                review.owner = request.user.userprofile
-                review.save()
-                messages.success(request, 'Your review was successfully submitted!!!')
-                return redirect('singleproduct', pk=singleitem.id)
+                    review = form.save(commit=False)
+                    review.project = singleitem
+                    review.owner = request.user.userprofile
+                    review.save()
+                    messages.success(request, 'Your review was successfully submitted!!!')
+                    return redirect('singleproduct', pk=singleitem.id)
+          
+        elif 'reviewReplysubmit' in request.POST:
+            form = ReviewForm(request.POST)
+            reviewId = request.POST.get("reviewid")
+            print(f"Debuging Review ID: {reviewId}")
+            try:
+                parent = Review.objects.get(id=reviewId)
+            except Review.DoesNotExist:
+                parent = None
+            if form.is_valid():
+                    review = form.save(commit=False)
+                    review.project = singleitem
+                    review.owner = request.user.userprofile
+                    review.parent = parent
+                    review.save()
+                    messages.success(request, 'Your Reply was successfully submitted!!!')
+                    return redirect('singleproduct', pk=singleitem.id)
+
         elif 'sendmail' in request.POST:
                 name = request.POST.get('your_name')
                 email = request.POST.get('your_email')
@@ -85,9 +144,65 @@ def singleproduct(request,pk):
                 return redirect('mainpage')
         else:
                 print(f"Something went wrong{request.POST.get('sendmail')}")
-    context = {'singleitem':singleitem, 'form': form,'itemsprofile':itemsprofile}
+    context = {'singleitem':singleitem,'listingimages':listingimages,'form': form,'itemsprofile':itemsprofile}
     return render(request, 'marketapp/singleproducts.html', context)
 
+def Addlikes(request, pk):
+        singleitem = Listingproducts.objects.get(id=pk)
+
+        is_dislike = False
+
+        for dislike in singleitem.dislikes.all():
+            if dislike == request.user.userprofile:
+                is_dislike = True
+                break
+
+        if is_dislike:
+            singleitem.dislikes.remove(request.user.userprofile)
+
+        is_like = False
+
+        for like in singleitem.likes.all():
+            if like == request.user.userprofile:
+                is_like = True
+                break
+
+        if not is_like:
+            singleitem.likes.add(request.user.userprofile)
+
+        if is_like:
+            singleitem.likes.remove(request.user.userprofile)
+
+        next = request.POST.get('next', '/')
+        return HttpResponseRedirect(next)
+def AddDislikes(request,pk):
+        singleitem = Listingproducts.objects.get(id=pk)
+
+        is_like = False
+
+        for like in singleitem.likes.all():
+            if like == request.user.userprofile:
+                is_like = True
+                break
+
+        if is_like:
+            singleitem.likes.remove(request.user.userprofile)
+
+        is_dislike = False
+
+        for dislike in singleitem.dislikes.all():
+            if dislike == request.user.userprofile:
+                is_dislike = True
+                break
+
+        if not is_dislike:
+            singleitem.dislikes.add(request.user.userprofile)
+
+        if is_dislike:
+            singleitem.dislikes.remove(request.user.userprofile)
+
+        next = request.POST.get('next', '/')
+        return HttpResponseRedirect(next)
 # AJAX
 def load_subcategory(request):
     category_id = request.GET.get('category_id')

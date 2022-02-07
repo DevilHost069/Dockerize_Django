@@ -23,11 +23,8 @@ def Subscriber(request):
     return {'subscriber':form}
    
 def TopRatedSlides(request):
-   
-    brandnew = Listingproducts.objects.filter(conditions='BrandNew')
-    # brandnewImg = ListingImages.objects.filter(listingproducts__id=brandnew.id).distinct()
-    return {'brandnew': brandnew,}
-
+    images = Listingimages.objects.all()
+    return {'brandnew': images,}
 
 def AccountsProfile(request): 
     if request.user.is_authenticated:
