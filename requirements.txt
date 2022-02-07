@@ -15,7 +15,6 @@ environ==1.0
 httpie==3.0.2
 idna==3.3
 multidict==6.0.2
-mysqlclient==2.1.0
 Pillow==9.0.0
 Pygments==2.11.2
 PyJWT==2.3.0
