@@ -9,17 +9,6 @@ from .models import Listingproducts,Userprofile,Category,Subcategory,Listingimag
 from .forms import ListingForm,ReviewForm
 from django.contrib import messages
 from django.core.mail import send_mail
-# Create your views here.
-#   search_query = ''
-#     if request.GET.get('search_query'):
-#         search_query = request.GET.get('search_query')
-#     tags = Tag.objects.filter(name__icontains = search_query)
-#     projects = Project.objects.distinct().filter(
-#         Q(title__icontains=search_query) |
-#         Q(descriptions__icontains=search_query) | 
-#         Q(owner__name__icontains=search_query) |
-#         Q(tags__in=tags)
-#     )
 def mainpage(request):
     searchproduct_query = ''
     searchlocation_query = ''
@@ -27,11 +16,6 @@ def mainpage(request):
     if request.GET.get('searchproduct_query') or request.GET.get('searchlocation_query'):
         searchproduct_query = request.GET.get('searchproduct_query')
         searchlocation_query = request.GET.get('searchlocation_query')
-    # products = Listingproducts.objects.distinct().filter(
-    #     Q(title__icontains=searchproduct_query) 
-    #     # Q(city__icontains=searchlocation_query) |
-    #     # Q(districts__icontains=searchlocation_query)
-    # ) 
     products = Listingproducts.objects.distinct().filter(
         Q(title__icontains=searchproduct_query)
         ).prefetch_related('listingimages_set')
@@ -228,7 +212,6 @@ def publishproducts(request):
                     listingdata.save()
                     if images:
                         for image in images:
-                            # print(f"Image Name: {image}")
                             Listingimages.objects.create(featured_image=image,listingproducts=listingdata)
                     else:
                         print(f"No any Images loaded: {images}")
@@ -249,7 +232,6 @@ def publishproducts(request):
 def editAds(request,pk):
     profile = request.user.userprofile
     adslist = profile.listingproducts_set.get(id=pk)
-    # print(f"GetSQLQuery: {connection.queries}")
     form = ListingForm(instance=adslist)
     
     if request.method == 'POST':
@@ -272,12 +254,3 @@ def deleteAds(request,pk):
     context = {'delobj': adslist,'page':page}
     return render(request,'usersapp/userhome.html',context)
 
-# employee_set = employess ---> (related_name='employees')
-# Department.objects.get(name='devil').employee_set.all()
-# Department.objects.all().filter(employee_set__name__startswith='bhuwan') ----> will outs Department name of employee table
-# Employee.objects.filter(name='evil').department.name ----> will outs department name from Employee Table
-# Employee.objects.filter(department__name='Accounts') ---> Will outs the name of employee of Account Departs
-
-#  Userprofile.objects.filter(listingproducts__owner=singleitem.owner)
-# SQLQuery:-  SELECT `usersapp_userprofile`.`user_id`, `usersapp_userprofile`.`name`, `usersapp_userprofile`.`locations`, `usersapp_userprofile`.`listingcity`, `usersapp_userprofile`.`phonnumber`, `usersapp_userprofile`.`email`, `usersapp_userprofile`.`social_facebook`, `usersapp_userprofile`.`profile_image`, `usersapp_userprofile`.`created`, `usersapp_userprofile`.`id` 
-# FROM `usersapp_userprofile` INNER JOIN `marketapp_listingproducts` ON (`usersapp_userprofile`.`id` = `marketapp_listingproducts`.`owner_id`) WHERE `marketapp_listingproducts`.`owner_id` = e7f005a26d9240fea0601a89a6e6bc7d

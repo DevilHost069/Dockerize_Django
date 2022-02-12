@@ -21,15 +21,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'django-insecure-k27b*!_9dl!l6-%fn3h(t0df)!94fhy8%wi2@gzo+g92z9xk%e'
-SECRET_KEY = os.environ.get('SECRET_KEY', 'changeme')
-# SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = bool(int(os.enviro.get('DEBUG', 0)))
-ALLOWED_HOSTS = []
-# ALLOWED_HOSTS_ENV = os.environ.get('ALLOWED_HOSTS')
-# if ALLOWED_HOSTS_ENV:
-#     ALLOWED_HOSTS.extend(ALLOWED_HOSTS_ENV.split(','))
-# Application definition
+SECRET_KEY = os.environ.get("SECRET_KEY")
+DEBUG = int(os.environ.get("DEBUG", default=0))
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -82,23 +76,17 @@ WSGI_APPLICATION = 'Marketplace.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'marketplace_db',
-#         'USER': 'root',
-#         'PASSWORD': '',
-#         'HOST': '127.0.0.1',
-#         'PORT': '3306',
-#     }
-# }
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": os.environ.get("SQL_ENGINE", "django.db.backends.sqlite3"),
+        "NAME": os.environ.get("SQL_DATABASE", BASE_DIR / "db.sqlite3"),
+        "USER": os.environ.get("SQL_USER", "user"),
+        "PASSWORD": os.environ.get("SQL_PASSWORD", "password"),
+        "HOST": os.environ.get("SQL_HOST", "localhost"),
+        "PORT": os.environ.get("SQL_PORT", "3306"),
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -158,26 +146,3 @@ EMAIL_USE_TLS = True
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# LOGGING = {  
-#     'version': 1,  
-#     'filters': {  
-#         'require_debug_true': {  
-#             '()': 'django.utils.log.RequireDebugTrue',  
-#         }  
-#     },  
-#     'handlers': {  
-#         'console': {  
-#             'level': 'DEBUG',  
-#             'filters': ['require_debug_true'],  
-#             'class': 'logging.StreamHandler',  
-#         }  
-#     },  
-#     'loggers': {  
-#         'django.db.backends': {  
-#             'level': 'DEBUG',  
-#             'handlers': ['console'],  
-#         }  
-#     }  
-# } 

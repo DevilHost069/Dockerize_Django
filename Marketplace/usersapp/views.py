@@ -83,7 +83,6 @@ def usersAds(request):
     mylisting = profile.listingproducts_set.all()
     print(f"ProfileType: {type(profile)}")
     print(f"usersAdsSQLQuery: {mylisting.query}")
-    # context ={'page':page,}
     context ={'page':page,'mylisting':mylisting}
     return render(request,'usersapp/userhome.html',context)
 
